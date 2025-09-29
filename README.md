@@ -105,9 +105,3 @@ Simply open `index.html` in your web browser.
 - ✅ AI-powered recommendations for **personalized matches**.  
 
 ---
-
-## 📌 License  
-
-This project is open-source and available under the **MIT License**.  
-
----
