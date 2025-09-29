@@ -1,5 +1,7 @@
 # SkillBridge: Find Your Perfect Internship  
 
+https://ayush-delta.github.io/Recommendation-System/internships.html
+
 SkillBridge is an internship discovery platform designed to bridge the gap between student aspirations and real opportunities across India. It offers personalized internship recommendations, multilingual support, and a clean, mobile-responsive user interface.  
 
 ---
