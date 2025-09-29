@@ -765,30 +765,52 @@ function createInternshipCardFull(internship) {
     `;
 }
 
+// --- Start of FIX for script.js ---
+
 function initializeFilters() {
-    // Initialize search and filter functionality
+    // 1. Get ALL filter elements
     const searchInput = document.getElementById('searchInput');
     const locationFilter = document.getElementById('locationFilter');
+    const sectorFilter = document.getElementById('sectorFilter');
     const categoryFilter = document.getElementById('categoryFilter');
-    
+    const typeFilter = document.getElementById('typeFilter'); 
+    const durationFilter = document.getElementById('durationFilter');
+    const applyFiltersBtn = document.querySelector('.apply-filters');
+    const clearFiltersBtn = document.querySelector('.clear-filters');
+
+    // 2. Attach listeners to ALL dropdowns
+
     if (searchInput) {
+        // Triggers filter on every letter typed
         searchInput.addEventListener('input', filterInternships);
     }
     
+    // Trigger filter on change for all SELECT elements
     if (locationFilter) {
         locationFilter.addEventListener('change', filterInternships);
     }
     
+    if (sectorFilter) {
+        sectorFilter.addEventListener('change', filterInternships);
+    }
+    
     if (categoryFilter) {
-        categoryFilter.addEventListener('change', filterInternships);
+        categoryFilter.addEventListener('change', filterInternships); // <--- ENSURING THIS IS HERE
+    }
+    
+    if (typeFilter) {
+        typeFilter.addEventListener('change', filterInternships);
+    }
+    
+    if (durationFilter) {
+        durationFilter.addEventListener('change', filterInternships);
     }
 
-    const applyFiltersBtn = document.querySelector('.apply-filters');
+    // Explicit buttons
     if (applyFiltersBtn) {
         applyFiltersBtn.addEventListener('click', filterInternships);
     }
 
-    const clearFiltersBtn = document.querySelector('.clear-filters');
     if (clearFiltersBtn) {
         clearFiltersBtn.addEventListener('click', clearAllFilters);
     }
@@ -797,6 +819,7 @@ function initializeFilters() {
 function filterInternships() {
     const searchInput = document.getElementById('searchInput').value.toLowerCase();
     const locationFilter = document.getElementById('locationFilter').value.toLowerCase();
+    const sectorFilter = document.getElementById('sectorFilter').value.toLowerCase();
     const categoryFilter = document.getElementById('categoryFilter').value.toLowerCase();
     const typeFilter = document.getElementById('typeFilter').value.toLowerCase();
     const durationFilter = document.getElementById('durationFilter').value.toLowerCase();
